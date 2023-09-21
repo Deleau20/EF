@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='img/money.png') }}" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>EDUFIN | ACCUEIL</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo" >
+                <a href="{{url_for('index')}}">
+                    <span class="logo-blanc">ED</span><span class="logo-bleu">FI</span>
+                </a>
+            </div>
+            <div class="container-navbar">
+                <ul class="menu">
+                    <li><a href="#accueil" class="menu-link" data-scroll-to="accueil">Accueil</a></li>
+                    <li><a href="#about" class="menu-link" data-scroll-to="about">À propos</a></li>
+                    <li><a href="#services" class="menu-link" data-scroll-to="services">Services</a></li>
+                    <li><a href="#contact" class="menu-link" data-scroll-to="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-button">
+                <a href="{{url_for('show_login')}}"><button class="login">Connexion</button></a>
+                <a href="{{url_for('show_signup')}}"><button class="logup">Inscription</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-slogan" data-aos="zoom-in-down" id="accueil">
+        <div class="slogan-title">
+            <div class="title">
+                <h1>La clé d'un avenir financier
+                    Stable commence ici...</h1>
+            </div>
+            <div class="title-texte">
+                <p>L'éducation financière est un pilier essentiel de la vie moderne, car elle équipe les individus des
+                    compétences et des connaissances nécessaires pour gérer leur argent de manière responsable. Elle
+                    englobe un large éventail de sujets, allant de la gestion du budget personnel à la compréhension des
+                    investissements et de la planification de la retraite.</p>
+            </div>
+            <div class="slogan-button">
+                <a href=""><button class="slogan-btn">Commencer</button></a>
+            </div>
+
+        </div>
+        <div class="slogan-images" >
+            <img src="{{url_for('static', filename='img/Revenue-bro.svg')}}" width="600px" height="600px"
+                style="border-radius: 10px;" alt="">
+        </div>
+    </div>
+
+    <div class="container-about" id="about">
+        <div class="about-images" data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
+            <img src="{{url_for('static', filename='img/about.svg')}}" width="500px" height="500px"
+                style="border-radius: 10px;" alt="">
+        </div>
+        <div class="about-title" >
+            <div class="ab-title">
+                <h1>À propos</h1>
+            </div>
+            <div class="ab-texte" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
+                <p>Nous spécialisée dans le calcul d'épargne et nous sommes un partenaire
+                    de confiance pour tous ceux
+                    qui cherchent à planifier leur avenir financier avec sagesse. Grâce à notre expertise et nos outils
+                    de calcul avancés, nous vous offrons des solutions personnalisées pour vous aidez à atteindre
+                    vos objectifs d'épargne. Que ce soit pour constituer un fonds d'urgence, épargner pour un projet
+                    spécifique ou préparer sa retraite, nous mettons votre à disposition un calculateur
+                    d'épargne.<br><br>
+                    Avec nous recevez : <br>
+                <div id="list-about">
+                    <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" alt="">
+                    <p>Une bonne éducation fianacière</p>
+                </div>
+
+                <div id="list-about">
+                    <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" alt="">
+                    <p>Un calculateur d'épargne en ligne</p>
+                </div>
+
+                <div id="list-about">
+                    <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" alt="">
+                    <p>Un bon suivie des experts</p>
+                </div>
+                </p>
+
+            </div>
+            <div class="ab-button">
+                <a href=""><button class="ab-btn">Commencer</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="nombres" >
+        <div class="nbr-content1">
+            <img src="{{url_for('static', filename='img/nbr1.png')}}" style="filter: invert();" width="100px"
+                height="100px" alt="">
+            <h1>1000+</h1>
+            <p>Nombres utilisateurs</p>
+        </div>
+        <div class="nbr-content1">
+            <img src="{{url_for('static', filename='img/nbr2.png')}}" style="filter: invert();" width="100px"
+                height="100px" alt="">
+            <h1>100+</h1>
+            <p>Nombres projets financés</p>
+        </div>
+        <div class="nbr-content1">
+            <img src="{{url_for('static', filename='img/nbr3.png')}}" style="filter: invert();" width="100px"
+                height="100px" alt="">
+            <h1>35+</h1>
+            <p>Nombres de calcul</p>
+        </div>
+    </div>
+
+    <div class="services-title" id="services">
+        <div>
+            <h1>
+                Pourquoi nous choisir ?
+            </h1>
+            <p>L'une des meilleurs app en ligne</p>
+        </div>
+    </div>
+    <div class="container-services">
+        <div class="services-content1">
+            <img src="{{url_for('static', filename='img/Apprendre.png')}}" width="500px" height="100px" alt="">
+            <a href=""><button>Commencer</button></a>
+        </div>
+        <div class="services-content2">
+            <img src="{{url_for('static', filename='img/calcul.png')}}" width="500px" height="100px" alt="">
+            <a href=""><button>Commencer</button></a>
+        </div>
+    </div>
+
+    <div class="contact-title" id="contact">
+        <div class="con-title">
+            <h1>Contactez-nous</h1>
+        </div>
+    </div>
+    <div class="container-cont">
+        <div class="img-contact">
+            <img src="{{ url_for('static', filename='img/Contact1.png')}}" height="500rem" width="400rem"
+                class="img-cont" alt="">
+        </div>
+        <div class="contact-form">
+            <div class="card">
+                <span class="title">Laisser un commentaire</span>
+                <form class="form">
+                    <div class="group">
+                        <input placeholder="‎" type="text" required="">
+                        <label for="name">Votre Nom</label>
+                    </div>
+                    <div class="group">
+                        <input placeholder="‎" type="email" id="email" name="email" required="">
+                        <label for="email">Votre Prenom</label>
+                    </div>
+                    <div class="group">
+                        <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
+                        <label for="comment">Votre Message</label>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- Debut footer -->
+    <footer>
+        <div class="container-footer">
+            <div class="footer-logo">
+                <a href="{{url_for('index')}}">
+                    <span class="logo-blanc">EDU</span><span class="logo-bleu">FIN</span>
+                </a>
+            </div>
+            <div class="footer-menu">
+                <ul>
+                    <li><a href="{{url_for('index')}}" class="active">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><img
+                                src="{{ url_for('static', filename='img/facebook.png')}}" width="20px" height="20px"
+                                alt="" /></a></li>
+                    <li><a href="https://www.instagram.com/"><img
+                                src="{{ url_for('static', filename='img/instagram.png')}}" width="20px" height="20px"
+                                alt="" /></a></li>
+                    <li><a href="https://www.twitter.com/"><img src="{{ url_for('static', filename='img/twitter.png')}}"
+                                width="20px" height="20px" alt="" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fin footer -->
+
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Sélectionnez tous les liens du menu
+                const menuLinks = document.querySelectorAll(".menu-link");
+        
+                // Parcourez chaque lien du menu
+                menuLinks.forEach(function (link) {
+                    // Ajoutez un gestionnaire d'événements "click" à chaque lien
+                    link.addEventListener("click", function (event) {
+                        // Empêchez le comportement de lien par défaut
+                        event.preventDefault();
+        
+                        // Récupérez la valeur de l'attribut data-scroll-to
+                        const targetId = link.getAttribute("data-scroll-to");
+        
+                        // Récupérez l'élément cible (la section à faire défiler)
+                        const targetElement = document.getElementById(targetId);
+        
+                        if (targetElement) {
+                            // Faites défiler la page jusqu'à l'élément cible
+                            targetElement.scrollIntoView({ behavior: "smooth" });
+        
+                            // Supprimez la classe "active" de tous les liens du menu
+                            menuLinks.forEach(function (otherLink) {
+                                otherLink.classList.remove("active");
+                            });
+        
+                            // Ajoutez la classe "active" à l'élément du menu cliqué
+                            link.classList.add("active");
+                        }
+                    });
+                });
+            });
+        </script>
+        
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+
+</html>

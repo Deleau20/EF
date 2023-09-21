@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='img/money.png') }}">
+    <title>EDUFIN | INSCRIPTION</title>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="content1">
+            <img src="{{url_for('static', filename='img/signup.svg')}}" alt="">
+
+        </div>
+        <div class="content2">
+
+            <form action="/signup" class="form" method="POST">
+                <p class="form-title">Inscrivez-vous</p>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <div class="input-container">
+                    <input type="text" name="nom" placeholder="Entrez votre nom" required>
+                    <span>
+                    </span>
+                </div>
+                <div class="input-container">
+                    <input type="text" name="prenom" placeholder="Entrez votre prénom" required>
+                    <span>
+                    </span>
+                </div>
+
+                <div class="input-container">
+                    <input type="email" name="email" placeholder="Entrez votre adresse e-mail" required>
+                    <span>
+                    </span>
+                </div>
+                <div class="input-container">
+                    <input type="password" name="mdp" placeholder="Entrez votre mot de passe" required>
+                </div>
+                <button type="submit" class="submit">
+                    S'inscrire
+                </button>
+
+                <p class="signup-link">
+                    Déja un compte ?
+                    <a href="{{url_for('show_login')}}">Connectez-vous</a>
+                </p>
+            </form>
+
+            <div class="retour">
+                <a href="{{ url_for('index') }}">Retour à l'accueil</a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

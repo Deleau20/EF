@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+
+:root {
+    --couleur-de-fond: #252b42;
+    --couleur-titre: #2a7cc7;
+    --couleur-btn: #23a6f0;
+    --couleur-texte: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Salsa', cursive;
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px){
+    
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar-container {
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: var(--couleur-de-fond);
+    color: var(--couleur-texte);
+}
+
+.sidebar-logo{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.sidebar {
+    padding: 20px;
+    width: 100%;
+    background-color: #23a6f0;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar ul {
+    padding: 0;
+    font-size: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: var(--couleur-texte);
+    text-decoration: none;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    padding-left: 15%;
+    background: var(--couleur-titre);
+    color: var(--couleur-texte);
+}
+
+}
