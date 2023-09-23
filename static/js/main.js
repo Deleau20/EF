@@ -26,3 +26,5 @@ function closeSidebar() {
     document.querySelector('.open-button').style.display = 'block';
     document.querySelector('.close-button').style.display = 'none';
 }
+
+
