@@ -72,17 +72,17 @@
                 d'épargne.<br>
                 Avec nous recevez : <br>
             <div id="list-about">
-                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" alt="">
+                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" style="margin-right: 10px;" alt="">
                 <p>Une bonne éducation fianacière</p>
             </div>
 
             <div id="list-about">
-                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" alt="">
+                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" style="margin-right: 10px;" alt="">
                 <p>Un calculateur d'épargne en ligne</p>
             </div>
 
             <div id="list-about">
-                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" alt="">
+                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" style="margin-right: 10px;" alt="">
                 <p>Un bon suivie des experts</p>
             </div>
             </p>
@@ -97,30 +97,30 @@
     <section class="services1-section">
         <div class="services1">
             <div class="image">
-                <img src="{{url_for('static', filename='img/nbr1.png')}}" style="filter: invert();" width="100px"
+                <img src="{{url_for('static', filename='img/nbr1.png')}}" style="filter: invert();" width="80px"
                     height="100px" alt="">
                 <h1>1000+</h1>
                 <p>Nombres utilisateurs</p>
             </div>
             <div class="image">
-                <img src="{{url_for('static', filename='img/nbr2.png')}}" style="filter: invert();" width="100px"
+                <img src="{{url_for('static', filename='img/nbr2.png')}}" style="filter: invert();" width="80px"
                     height="100px" alt="">
                 <h1>100+</h1>
                 <p>Nombres projets financés</p>
             </div>
             <div class="image">
-                <img src="{{url_for('static', filename='img/nbr3.png')}}" style="filter: invert();" width="100px"
+                <img src="{{url_for('static', filename='img/nbr3.png')}}" style="filter: invert();" width="80px"
                     height="100px" alt="">
                 <h1>35+</h1>
                 <p>Nombres de calcul</p>
             </div>
 
         </div>
-
-        <div id="services"></div>
     </section>
 
+    <div id="services" style="padding-top: 20px;"></div>
     <div class="services-title">
+        
         <div>
             <h1>
                 Services
@@ -139,14 +139,17 @@
     </div>
 
 
-    <div id="contact"></div>
+    
 
     <div class="contact-title">
-        <div class="con-title">
+        
+        <div class="con-title" >
             <h1>Contactez-nous</h1>
         </div>
     </div>
+    
     <div class="container-cont">
+        <div id="contact" ></div>
         <div class="img-contact">
             <img src="{{ url_for('static', filename='img/Contact1.png')}}" height="500rem" width="400rem"
                 class="img-cont" alt="">
@@ -209,6 +212,21 @@
         </div>
 
         <!-- Fin footer -->
+
+        <script>
+            const navLinks = document.querySelectorAll('.links a');
+        
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+        
+                    this.classList.add('active');
+                });
+            });
+        </script>
+        
 </body>
 
 </html>

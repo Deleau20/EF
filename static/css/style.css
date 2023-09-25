@@ -36,7 +36,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 20px 15px;
 }
@@ -129,9 +129,9 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 95vh;
+  height: 65vh;
   padding: 0 15px;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -142,6 +142,7 @@ body {
 
 .hero h2 {
   font-size: 2.5rem;
+  color: var(--couleur-titre);
   margin-bottom: 20px;
 }
 
@@ -191,9 +192,9 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 95vh;
+  height: 65vh;
   padding: 0 15px;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -205,6 +206,7 @@ body {
 
 .about-section h2 {
   font-size: 2.5rem;
+  color: var(--couleur-titre);
   margin-bottom: 20px;
 }
 
@@ -252,9 +254,9 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 60vh;
+  height: 35vh;
   padding: 0 15px;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   background-color: var(--couleur-de-fond);
 }
@@ -320,7 +322,7 @@ body {
 
 
 .container-services {
-  width: 90%;
+  width: 74%;
   height: 40rem;
   margin: auto;
   margin-top: 2rem;
@@ -404,7 +406,7 @@ body {
 }
 
 .container-cont {
-  width: 80%;
+  width: 72%;
   height: 40rem;
   margin: auto;
   display: flex;
