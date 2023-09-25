@@ -4,229 +4,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== ICONES BOX ==========-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--========== CSS ==========-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
     <link rel="icon" href="{{ url_for('static', filename='img/money.png') }}" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>EDUFIN | ACCUEIL</title>
 </head>
 
 <body>
-    <header class="header">
-        <nav class="navbar">
+    <!--========== HAUT DE PAGE ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+    </a>
+
+    <!--========== EN-TÊTE ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
             <h2 class="logo"><span class="logo-blanc">EDU</span><span class="logo-bleu">FIN</span></h2>
-            <input type="checkbox" id="menu-toggle" />
-            <label for="menu-toggle" id="hamburger-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </label>
-            <ul class="links">
-                <li><a href="#accueil" class="active">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="buttons">
-                <a href="{{url_for('show_login')}}" class="signin">Connexion</a>
-                <a href="{{url_for('show_signup')}}" class="signup">Inscription</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Accueil</a></li>
+                    <li class="nav__item"><a href="#share" class="nav__link">À propos</a></li>
+                    <li class="nav__item"><a href="#decoration" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#accessory" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="{{ url_for('show_login')}}" class="nav__link"><button >Comptes</button></a></li>
+
+                    <li><i id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt'></i>
             </div>
         </nav>
     </header>
 
-    <div id="accueil">
+    <main class="l-main">
+        <!--========== ACCUEIL ==========-->
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__img">
+                    <img src="{{url_for('static', filename='img/revenue-bro.svg')}}" alt="">
+                </div>
 
-    </div>
-
-    <section class="hero-section">
-        <div class="hero">
-            <h2>La clé d'un avenir financier
-                Stable commence ici...</h2>
-            <p>
-                L'éducation financière est un pilier essentiel de la vie moderne, car elle équipe les individus des
-                compétences et des connaissances nécessaires pour gérer leur argent de manière responsable.
-            </p>
-            <div class="buttons">
-                <a href="#" class="join">En savoir plus</a>
+                <div class="home__data">
+                    <h1 class="home__title">Un avenir financier stable.</h1>
+                    <p class="home__description">L'éducation financière est un pilier essentiel de la vie moderne, car elle équipe les individus des
+                        compétences et des connaissances nécessaires pour gérer leur argent de manière responsable.</p>
+                    <a href="#" class="button">Commencer</a>
+                </div>
             </div>
-        </div>
-        <div class="img">
-            <img src="{{url_for('static', filename='img/Revenue-bro.svg')}}" alt="hero image" />
-        </div>
-    </section>
+        </section>
 
-    <div id="about"></div>
-
-    <section class="about-section">
-        <div class="img">
-            <img src="{{url_for('static', filename='img/about.svg')}}" alt="hero image" />
-        </div>
-        <div class="about">
-            <h2>À propos</h2>
-            <p>
-                Nous sommes spécialisée dans le calcul d'épargne et nous sommes un partenaire
+        <!--========== A propos ==========-->
+        <section class="share section bd-container" id="share">
+            <div class="share__container bd-grid">
+                <div class="share__data">
+                    <h2 class="section-title-center">À propos</h2>
+                    <p class="share__description">Nous sommes spécialisée dans le calcul d'épargne et nous sommes un partenaire
                 de confiance pour tous ceux
                 qui cherchent à planifier leur avenir financier avec sagesse. Grâce à notre expertise et nos outils
                 de calcul avancés, nous vous offrons des solutions personnalisées pour vous aidez à atteindre
                 vos objectifs d'épargne. Que ce soit pour constituer un fonds d'urgence, épargner pour un projet
-                spécifique ou préparer sa retraite, nous mettons votre à disposition un calculateur
-                d'épargne.<br>
-                Avec nous recevez : <br>
-            <div id="list-about">
-                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" style="margin-right: 10px;" alt="">
-                <p>Une bonne éducation fianacière</p>
+                spécifique ou préparer sa retraite, nous mettons votre à disposition un calculateur.</p>
+                    <a href="#" class="button">Joindre</a>
+                </div>
+
+                <div class="share__img">
+                    <img src="{{url_for('static', filename='img/about.svg')}}" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--========== Réalisations ==========-->
+        <section class="decoration section bd-container" id="decoration">
+            <h2 class="section-title">Nos réalisations et services</h2>
+            <div class="decoration__container bd-grid">
+                <div class="decoration__data">
+                    <img src="{{ url_for('static', filename='img/users.png')}}" alt="" class="decoration__img">
+                    <h3 class="decoration__title">1000+</h3>
+                    <a href="#" class="button button-link">Nombres utilisateurs</a>
+                </div>
+
+                <div class="decoration__data">
+                    <img src="{{ url_for('static', filename='img/new-project.png')}}" alt="" class="decoration__img">
+                    <h3 class="decoration__title">100+</h3>
+                    <a href="#" class="button button-link">Nombres projets financés</a>
+                </div>
+
+                <div class="decoration__data">
+                    <img src="{{ url_for('static', filename='img/calculator.png')}}" alt="" class="decoration__img">
+                    <h3 class="decoration__title">35+</h3>
+                    <a href="#" class="button button-link">Nombres de calcul</a>
+                </div>
+            </div>
+        </section>
+
+        <!--========== Services ==========-->
+        <section class="accessory section bd-container" id="accessory">
+            <h2 class="section-title">Nos services</h2>
+
+            <div class="accessory__container bd-grid">
+                <div class="accessory__content">
+                    <img src="{{ url_for('static', filename='img/arrow.png')}}" alt="" class="accessory__img">
+                    <h3 class="accessory__title">Listes de nos services</h3>
+                </div>
+
+                <div class="accessory__content">
+                    <img src="{{ url_for('static', filename='img/profit.png')}}" alt="" class="accessory__img">
+                    <h3 class="accessory__title">Calculateur</h3>
+                    <span class="accessory__category">d'éparge</span>
+                    <span class="accessory__preci">Cliquez sur plus</span>
+                    <a href="#" class="button accessory__button"><i class='bx bx-plus'></i></a>
+                </div>
+
+                <div class="accessory__content">
+                    <img src="{{ url_for('static', filename='img/learning.png')}}" alt="" class="accessory__img">
+                    <h3 class="accessory__title">Education</h3>
+                    <span class="accessory__category">Financière</span>
+                    <span class="accessory__preci">Cliquez sur plus</span>
+                    <a href="#" class="button accessory__button"><i class='bx bx-plus'></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!--========== SEND GIFT ==========-->
+        <section class="send section">
+            <div class="send__container bd-container bd-grid">
+                <div class="send__content">
+                    <h2 class="section-title-center send__title">S'inscrire à notre NewsLetter</h2>
+                    <p class="send__description">pour obtenir notre meilleure promotion en premier.</p>
+                    <form action="">
+                        <div class="send__direction">
+                            <input type="text" placeholder="Adresse Email" class="send__input">
+                            <a href="#" class="button">Envoyer</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="send__img">
+                    <img src="{{ url_for('static', filename='img/email1.png')}}" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section">
+        <div class="footer__container bd-container bd-grid">
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    <a href="#" class="footer__logo">EDUFIN</a>
+                </h3>
+                <p class="footer__description">J'ai appris un peu plus de la finance et aujourd'hui je gagne.</p>
             </div>
 
-            <div id="list-about">
-                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" style="margin-right: 10px;" alt="">
-                <p>Un calculateur d'épargne en ligne</p>
-            </div>
-
-            <div id="list-about">
-                <img src="{{url_for('static', filename='img/valide.png')}}" width="30px" height="30px" style="margin-right: 10px;" alt="">
-                <p>Un bon suivie des experts</p>
-            </div>
-            </p>
-            <div class="buttons">
-                <a href="#" class="join">Commencer</a>
-            </div>
-        </div>
-    </section>
-
-    
-
-    <section class="services1-section">
-        <div class="services1">
-            <div class="image">
-                <img src="{{url_for('static', filename='img/nbr1.png')}}" style="filter: invert();" width="80px"
-                    height="100px" alt="">
-                <h1>1000+</h1>
-                <p>Nombres utilisateurs</p>
-            </div>
-            <div class="image">
-                <img src="{{url_for('static', filename='img/nbr2.png')}}" style="filter: invert();" width="80px"
-                    height="100px" alt="">
-                <h1>100+</h1>
-                <p>Nombres projets financés</p>
-            </div>
-            <div class="image">
-                <img src="{{url_for('static', filename='img/nbr3.png')}}" style="filter: invert();" width="80px"
-                    height="100px" alt="">
-                <h1>35+</h1>
-                <p>Nombres de calcul</p>
-            </div>
-
-        </div>
-    </section>
-
-    <div id="services" style="padding-top: 20px;"></div>
-    <div class="services-title">
-        
-        <div>
-            <h1>
-                Services
-            </h1>
-        </div>
-    </div>
-    <div class="container-services">
-        <div class="services-content1">
-            <img src="{{url_for('static', filename='img/Apprendre.png')}}" width="500px" height="100px" alt="">
-            <a href=""><button>Commencer</button></a>
-        </div>
-        <div class="services-content2">
-            <img src="{{url_for('static', filename='img/calcul.png')}}" width="500px" height="100px" alt="">
-            <a href=""><button>Commencer</button></a>
-        </div>
-    </div>
-
-
-    
-
-    <div class="contact-title">
-        
-        <div class="con-title" >
-            <h1>Contactez-nous</h1>
-        </div>
-    </div>
-    
-    <div class="container-cont">
-        <div id="contact" ></div>
-        <div class="img-contact">
-            <img src="{{ url_for('static', filename='img/Contact1.png')}}" height="500rem" width="400rem"
-                class="img-cont" alt="">
-        </div>
-        <div class="contact-form">
-            <div class="card">
-                <span class="title">Laisser un commentaire</span>
-                <form class="form">
-                    <div class="group">
-                        <input placeholder="‎" type="text" required="">
-                        <label for="name">Votre Nom</label>
-                    </div>
-                    <div class="group">
-                        <input placeholder="‎" type="email" id="email" name="email" required="">
-                        <label for="email">Votre Prenom</label>
-                    </div>
-                    <div class="group">
-                        <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
-                        <label for="comment">Votre Message</label>
-                    </div>
-                    <button type="submit">Envoyer</button>
-                </form>
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-    <!-- Debut footer -->
-    <footer>
-        <div class="container-footer">
-            <div class="footer-logo">
-                <a href="{{url_for('index')}}">
-                    <span class="logo-blanc">EDU</span><span class="logo-bleu">FIN</span>
-                </a>
-            </div>
-            <div class="footer-menu">
+            <div class="footer__content">
+                <h3 class="footer__title">Nos Services</h3>
                 <ul>
-                    <li><a href="{{url_for('index')}}" class="active">Accueil</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#decoration" class="footer__link">Education</a></li>
+                    <li><a href="#decoration" class="footer__link">Calculateur</a></li>
                 </ul>
             </div>
-            <div class="footer-social">
+
+            <!-- <div class="footer__content">
+                <h3 class="footer__title">Notre Entreprise</h3>
                 <ul>
-                    <li><a href="https://www.facebook.com/"><img
-                                src="{{ url_for('static', filename='img/facebook.png')}}" width="20px" height="20px"
-                                alt="" /></a></li>
-                    <li><a href="https://www.instagram.com/"><img
-                                src="{{ url_for('static', filename='img/instagram.png')}}" width="20px" height="20px"
-                                alt="" /></a></li>
-                    <li><a href="https://www.twitter.com/"><img src="{{ url_for('static', filename='img/twitter.png')}}"
-                                width="20px" height="20px" alt="" /></a></li>
+                    <li><a href="#" class="footer__link">Blog</a></li>
+                    <li><a href="#" class="footer__link">À propos de nous</a></li>
+                    <li><a href="#" class="footer__link">Notre mission</a></li>
                 </ul>
+            </div> -->
+
+            <div class="footer__content">
+                <h3 class="footer__title">Réseaux Sociaux</h3>
+                <a href="#" class="footer__social"><i class='bx bxl-facebook-circle '></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-instagram-alt'></i></a>
             </div>
         </div>
 
-        <!-- Fin footer -->
+        <p class="footer__copy">&#169; 2023 EDUFIN. Tous droits réservés</p>
+    </footer>
 
-        <script>
-            const navLinks = document.querySelectorAll('.links a');
-        
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                    });
-        
-                    this.classList.add('active');
-                });
-            });
-        </script>
-        
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
 </body>
 
 </html>
