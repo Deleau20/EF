@@ -30,6 +30,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 999;
+  margin-bottom: 20rem;
 }
 
 .navbar {
@@ -133,7 +134,6 @@ body {
   padding: 0 15px;
   max-width: 1500px;
   margin: 0 auto;
-  margin-top: 10rem;
   margin-bottom: 10rem;
 }
 
