@@ -35,25 +35,25 @@
         </a>
         <ul class="side-menu top">
             <li class="active">
-                <a href="#">
+                <a href="{{ url_for('dashboard')}}">
                     <i class="bx bxs-dashboard"></i>
                     <span class="text">Tableau de board</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url_for('show_courses')}}">
                     <i class='bx bx-list-ul'></i>
                     <span class="text">Listes de cours</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url_for('show_calculateur')}}">
                     <i class='bx bx-calculator'></i>
                     <span class="text">Calculateur</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="">
                     <i class="bx bxs-message-dots"></i>
                     <span class="text">Notifications</span>
                 </a>
@@ -61,7 +61,7 @@
             <li>
                 <a href="#">
                     <i class='bx bx-spreadsheet'></i>
-                    <span class="text">Plannaficateur</span>
+                    <span class="text">Suivre un cours</span>
                 </a>
             </li>
         </ul>
@@ -74,7 +74,7 @@
             </li>
             <li>
                 <a href="#" class="logout">
-                    <i class="bx bxs-log-out-circle"></i>
+                    <i class='bx bx-log-out'></i>
                     <span class="text">Déconnexion</span>
                 </a>
             </li>
@@ -103,6 +103,9 @@
 
         <!-- MAIN -->
         <main>
+            <div class="left">
+                <h1 style="color: #252b42;">Tableau de board</h1>
+              </div>
             <ul class="box-info">
                 <li>
                     <i class="bx bxs-calendar-check"></i>

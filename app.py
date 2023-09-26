@@ -43,6 +43,15 @@ def dashboard():
         return render_template('dashboard.html', user_nom=session.get('utilisateur'))
     
 
+@app.route('/show_courses')
+def show_courses():
+    return render_template('cours.html')
+
+@app.route('/show_calculateur')
+def show_calculateur():
+    return render_template('calcul.html')
+    
+
 
 @app.route('/show_login')
 def show_login():
