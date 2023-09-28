@@ -23,6 +23,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
 
+    <!-- CHARTS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
     <title>EDUFIN | DASHBOARD</title>
     <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
 </head>
@@ -111,51 +115,73 @@
             <div class="form-container">
                 <div class="content-one">
                     <div class="content-one-one">
-
-                        <form class="form">
-
-                            <div class="flex">
-                                <label>
-                                    <input required="" placeholder="" type="text" class="input">
-                                    <span>first name</span>
-                                </label>
-
-                                <label>
-                                    <input required="" placeholder="" type="text" class="input">
-                                    <span>last name</span>
-                                </label>
+                        <form class="form" action="/calculer" method="post">
+                            <div class="form-group">
+                                <label>Revenu</label>
+                                <input type="number" id="revenu" name="revenu" placeholder="Entrez votre revenu mensuel"
+                                    required="">
                             </div>
+                            <div class="form-group">
+                                <label>Pourcentage</label>
+                                <select id="percentage" name="pourcentage" class="form-control" required>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="20">20%</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Objectif de l'épargne</label>
+                                <input type="text" id="objectif" name="objectif" placeholder="Entrez votre objectif"
+                                    required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Montant à épargne</label>
+                                <input type="text" id="montant" name="montant" placeholder="Montant à épargner"
+                                    required="">
+                            </div>
+                            <p class="signup-link">
+                                <a href="" class="signup-link link">NB :</a>
+                                Les intérêt d'épargne sont moins élevé chez <a
+                                    href="https://mokobank.pythonanywhere.com">Mokobanque</a>
+                            </p>
 
-                            <label>
-                                <input required="" placeholder="" type="email" class="input">
-                                <span>email</span>
-                            </label>
-
-                            <label>
-                                <input required="" type="tel" placeholder="" class="input">
-                                <span>contact number</span>
-                            </label>
-                            <label>
-                                <textarea required="" rows="3" placeholder="" class="input01"></textarea>
-                                <span>message</span>
-                            </label>
                     </div>
+
                     <div class="content-one-two">
-
+                        <!-- Canvas pour le graphique -->
+                        <canvas id="myChart" width="400" height="400"></canvas>
                     </div>
+
                 </div>
                 <div class="content-two">
-                    <button class="cssbuttons-io-button"> Get started
-                        <div class="icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                    <button type="submit">
+                        <div class="svg-wrapper-1">
+                            <div class="svg-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    style="fill: white;transform: ;msFilter:;">
+                                    <path
+                                        d="M19 2H5c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM5 20V4h14l.001 16H5z">
+                                    </path>
+                                    <path d="M7 12h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zM7 6h10v4H7zm4 10h2v2h-2zm4-4h2v6h-2z">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
-                      </button>
-                </form>
-
+                        <span>Calculer</span>
+                    </button>
+                    </form>
                 </div>
+
             </div>
+
         </main>
         <!-- MAIN -->
+
+        <section class="historique">
+            <div class="left">
+                <h1 style="color: #252b42;">Historique</h1>
+            </div>
+        </section>
     </section>
     <!-- CONTENT -->
 
@@ -165,6 +191,48 @@
     </div>
     <!-- End of footer -->
 
+
+
+    <script>
+        // Récupérer les données que vous avez renvoyées depuis Flask
+        var montantEpargne = {{ montant_epargne | safe }};
+        var objectif = "Objectif : {{ objectif }}";
+
+        // Créez un objet de données pour le graphique
+        var data = {
+            labels: ["Montant à épargner en F CFA"],
+            datasets: [{
+                label: objectif,
+                data: [montantEpargne, 0], // Initialisez le montant épargné à 0
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Configurez les options du graphique
+        var options = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+
+        // Récupérez le contexte du canvas et créez le graphique
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
     <script src="{{ url_for('static', filename='js/dash.js')}}"></script>
 </body>
 

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, jsonify, render_template, request, redirect, url_for, flash, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import current_user  
 import re
@@ -50,6 +50,32 @@ def show_courses():
 @app.route('/show_calculateur')
 def show_calculateur():
     return render_template('calcul.html')
+
+
+@app.route('/calculer', methods=['POST'])
+def calculate_savings():
+    # Récupérer les données du formulaire
+    if request.method == 'POST':
+        revenu = float(request.form['revenu'])
+        pourcentage = float(request.form['pourcentage'])
+        objectif = request.form['objectif']
+        # Effectuer le calcul de l'épargne ici
+        montant_epargne = revenu * (pourcentage / 100)
+        montant_epargne = round(montant_epargne, 2)
+        # Renvoyer le résultat au template
+        return render_template('calcul.html', montant_epargne=montant_epargne, objectif=objectif)
+    return render_template('calcul.html')
+        
+    # revenu = float(request.form.get('revenu'))
+    # pourcentage = float(request.form.get('pourcentage'))
+    # objectif = request.form.get('objectif')
+    
+    # # Effectuer le calcul de l'épargne ici
+    # montant_epargne = revenu * (pourcentage / 100)
+    # montant_epargne = round(montant_epargne, 2)
+    # # Renvoyer le résultat au template
+    # return render_template('calcul.html', montant_epargne=montant_epargne, objectif=objectif)
+
     
 
 
