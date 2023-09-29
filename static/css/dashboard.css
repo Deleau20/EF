@@ -352,7 +352,7 @@ body {
   border-radius: 10px;
   display: flex;
   align-items: center;
-  grid-gap: 24px;
+  grid-gap: 16px;
 }
 #content main .box-info li .bx {
   width: 80px;
@@ -561,5 +561,26 @@ body {
   }
   #content main .table-data .todo .todo-list {
     min-width: 420px;
+  }
+}
+
+
+@media screen and (min-width: 1440px){
+  .container-cours{
+    background-color: #252b42;
+    width: 90%;
+    height: 80rem;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .container-cours h2{
+    color: #3c91e6;
+    margin-bottom: 6rem;
+  }
+  .container-cours p{
+    color: white;
+    margin-bottom: 6rem;
+    font-size: 25px;
   }
 }

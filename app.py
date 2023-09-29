@@ -76,6 +76,11 @@ def calculate_savings():
     # # Renvoyer le résultat au template
     # return render_template('calcul.html', montant_epargne=montant_epargne, objectif=objectif)
 
+
+@app.route('/suivre')
+def suivre():
+    return render_template('suivre.html')
+
     
 
 
